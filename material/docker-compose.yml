@@ -9,7 +9,11 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
-
+    
+  code-server:
+    build: DotNetWebApi
+    ports:
+      - "80:5000"
 #  redis:
 #    image: redis:4.0.8-alpine
 #    ports:
