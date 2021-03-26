@@ -1,10 +1,22 @@
-﻿<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
-    <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p>Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+@inherits LayoutComponentBase
+@using System
+@using System.Net.Http
+@page "/"
+@inject HttpClient Http
+
+<div>
+    <h1>@helloWorld</h1>
+</div>
+
+@code {
+    string helloWorld = "Hello, World! C#";
+
+    /*
+    private string data;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.data = await Http.GetStringAsync("hello").ConfigureAwait(false);
+    }
+    */
+}
